@@ -2,8 +2,7 @@ name: Songran Liu
 language: zh-CN
 theme: jekyll-theme-minimal
 
-footer-links:
-  zhihu: ll-chen-2
-  email: mailto:liusongran@cse.neu.edu.cn
-  github: liusongran
-  
+#footer-links:
+#  zhihu: ll-chen-2
+#  email: mailto:liusongran@cse.neu.edu.cn
+#  github: liusongran
