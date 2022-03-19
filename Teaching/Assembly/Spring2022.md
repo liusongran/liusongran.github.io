@@ -25,8 +25,8 @@
 4. 第④讲(2022-03-10)\|\|讲义：[第3章-微型计算机的结构-下](./Slides/Chapter3-C.pdf)。
 5. 第⑤讲(2022-03-15)\|\|讲义：[第3章-微型计算机的结构-寻址方式（补）](./Slides/Chapter3-D.pdf)，[第4章-汇编语言](./Slides/Chapter4.pdf)。
 6. 第⑥讲(2022-03-17)\|\|讲义：[第5章-顺序结构程序](./Slides/Chapter5.pdf)。
-7. 第⑦讲(2022-03-22)\|\|讲义：[第6章-分支结构程序](./Slides/Chapter6.pdf)
-8. 第⑧讲(2022-03-24)\|\|讲义：
+7. 第⑦讲(2022-03-22)\|\|[代码](https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/Code/Chapter6)，讲义：[第6章-分支结构程序](./Slides/Chapter6.pdf)。
+8. 第⑧讲(2022-03-24)\|\|[代码](https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/Code/Chapter7)，讲义：[第7章-循环结构程序](./Slides/Chapter7.pdf)。
 9. 第⑨讲(2022-03-29)\|\|讲义：
 10. 第⑩讲(2022-03-31)\|\|讲义：
 11. 第⑪讲(2022-04-05)\|\|讲义：

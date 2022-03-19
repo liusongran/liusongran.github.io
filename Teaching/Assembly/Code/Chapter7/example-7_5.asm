@@ -1,0 +1,51 @@
+;*****EXAM7.5*****
+SSEG	SEGMENT STACK
+STACK	DB     	50 DUP(0)
+SSEG	ENDS
+
+DSEG	SEGMENT
+CIPHER	DB	'BVDCJKJKLHTVUIPRERTZEQ'
+		DB	'HKAXUERTJKLHFSDSAPAWBEQ'
+		DB	'DHFSBNMHMVRTUDPOIHFXJMO$'
+CHRFQ	DB	26 DUP(?)
+DSEG	ENDS
+
+CSEG	SEGMENT
+		ASSUME	CS:CSEG, DS:DSEG
+		ASSUME 	SS:SSEG, ES:DSEG
+DECPHR: MOV	AX, DSEG		;设置数据段
+		MOV	DS, AX
+		MOV	ES, AX
+		MOV	AX, SSEG 		;设置堆栈段地址
+		MOV SS, AX
+		MOV	SP, SIZE STACK	;设堆栈指针
+		LEA	DI, CHRFQ     	;将结果单元清0
+		MOV	CX, 26
+		CLD
+		XOR	AL, AL
+		REP	STOSB
+		LEA	SI, CIPHER   	;密码首址送SI
+AG:	  	LEA	DI, CHRFQ   	;结果单元首址送DI
+		MOV	AL,[SI]			;取一密码字符
+		CMP	AL, '$'   		;是结束符吗?
+		JZ	STOP         	;是,转停机
+		SUB	AL, 41H  		;代码减41H
+		XOR	AH, AH        	;高位部分清零.
+		ADD DI, AX    		;形成结果单元地址
+		INC	BYTE PTR[DI]	;出现次数增1
+		INC	SI     			;SI指向下一个代码
+		JMP	AG  			;继续工作
+STOP:  	MOV	AH, 4CH
+		INT	21H
+CSEG  ENDS 
+END	DECPHR
+
+AG:		MOV	BL,[SI]
+		CMP	BL,'$'
+		JZ	STOP
+		SUB	BL,'A'
+		XOR	BH,BH
+		INC	CHRFQ[BX]
+		INC	SI
+
+
