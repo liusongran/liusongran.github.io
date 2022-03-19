@@ -48,4 +48,11 @@
 2. 《[汇编语言](https://book.douban.com/subject/35038473/) - 王爽》，清华大学出版社。
 3. 《[汇编语言：基于x86处理器](https://book.douban.com/subject/26769528/) - Kip Irvine[美]》，机械工业出版社。
 
+## 工具
+### 8086 Assembly Program Design
+1. [Emu8086](https://emu8086-microprocessor-emulator.en.softonic.com/) for Windows
+2. [MASM/TASM plugin](https://gitee.com/dosasm/masm-tasm/) for Vscode
+3. [DOSBOX: an x86 emulator with DOS](https://www.dosbox.com/). 
+4. MASM tools (e.g., MASM.exe, LINK.exe, DEBUG.exe) can be found [here](./MASM/).
+
 ## 其他
