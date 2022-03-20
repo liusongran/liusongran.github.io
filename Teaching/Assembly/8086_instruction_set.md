@@ -22,12 +22,12 @@
 | REG          | SREG           | MOV AX, DS   |
 | SREG         | REG            | MOV DS, AX |
 | ~~SREG~~         | ~~SREG~~           | ~~MOV DS, ES~~ |
-| SREG         | memory         | MOV DS, [0] |
+| SREG         | memory         | MOV DS, DS:[0] |
 | ~~SREG~~         | ~~idata~~          | ~~MOV DS, 10H~~ |
 | memory       | REG            | MOV [6], AX |
 | memory       | SREG           | MOV [0], CS |
 | ~~memory~~       | ~~memory~~         | ~~MOV [0], [6]~~ |
-| ~~memory~~       | ~~idata~~          | ~~MOV [BX], 10H~~ |
+| memory       | idata         | ~~MOV [BX], 10H~~ |
 | ~~idata~~        | ~~REG~~            | |
 | ~~idata~~        | ~~SREG~~           | |
 | ~~idata~~        | ~~memory~~         | |
@@ -35,3 +35,9 @@
 
 **Note**: The `MOV` instruction cannot set the value of the CS and IP registers.
 
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
