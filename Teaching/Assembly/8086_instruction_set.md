@@ -14,24 +14,21 @@
 **Format**: `MOV destination,source`
 
 **Usage**:
-| destination  | source         | example |
-|:-------------|:---------------|:------|
-| REG          | idata          | MOV AX, 8  |
-| REG          | REG            | MOV AX, BX  |
-| REG          | memory         | MOV AX, ES:[BX]   |
-| REG          | SREG           | MOV AX, DS   |
-| SREG         | REG            | MOV DS, AX |
-| ~~SREG~~         | ~~SREG~~           | ~~MOV DS, ES~~ |
-| SREG         | memory         | MOV DS, DS:[0] |
-| ~~SREG~~         | ~~idata~~          | ~~MOV DS, 10H~~ |
-| memory       | REG            | MOV [6], AX |
-| memory       | SREG           | MOV [0], CS |
-| ~~memory~~       | ~~memory~~         | ~~MOV [0], [6]~~ |
-| memory       | idata         | ~~MOV [BX], 10H~~ |
-| ~~idata~~        | ~~REG~~            | |
-| ~~idata~~        | ~~SREG~~           | |
-| ~~idata~~        | ~~memory~~         | |
-| ~~idata~~        | ~~idata~~          | |
+| Destination | Source     | Example                                                   |
+|-------------|------------|-----------------------------------------------------------|
+| REG         | REG        | MOV AX, BX                                                |
+| REG         | SREG       | MOV AX, DS                                                |
+| REG         | memory     | MOV AX, ES:[BX]                                           |
+| REG         | idata      | MOV AX, 08H                                               |
+| SREG        | REG        | MOV DS, AX                                                |
+| SREG        | SREG       | MOV DS, ES                                                |
+| SREG        | memory     | MOV ES, DS:[0]                                            |
+| ~~SREG~~    | ~~memory~~ | ~~MOV ES, [0]~~                                           |
+| ~~SREG~~    | ~~idata~~  | ~~MOV DS, 10H~~                                           |
+| memory      | REG        | MOV [6], AX                                               |
+| memory      | SREG       | MOV [0], CS                                               |
+| ~~memory~~  | ~~memory~~ | ~~MOV [0035H], [15H] MOV DS[35H], [35H]~~                 |
+| memory      | idata      | ~~MOV [0035H], 35H MOV [BX], 10H~~ MOV BYTE PTR [BX], 10H |
 
 **Note**: The `MOV` instruction cannot set the value of the CS and IP registers.
 
