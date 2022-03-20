@@ -6,7 +6,6 @@
 > - **SREG**: DS, ES, SS, and only as second operand: CS.
 > - **memory**: [BX], [BX+SI+7], variable, etc...
 > - **immediate (idata)**: 5, -24, 3Fh, 10001101b, etc...
-## 
 
 ### `MOV`
 - Description: The `MOV` instruction is the most important command in the 8086 because it moves data from one location to another. It also has the widest variety of parameters; so if the assembler programmer can use `MOV` effectively, the rest of the commands are easier to understand.

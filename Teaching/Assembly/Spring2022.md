@@ -57,4 +57,4 @@
 
 ## 其他
 ### 8086 Instruction Set
-1. [Complete 8086 instruction set](./8086%20instruction%20set.md).
+1. [Complete 8086 instruction set](./8086_instruction_set.md).
