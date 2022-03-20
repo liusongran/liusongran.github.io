@@ -50,9 +50,11 @@
 
 ## 工具
 ### 8086 Assembly Program Design
-1. [Emu8086](https://emu8086-microprocessor-emulator.en.softonic.com/) for Windows
-2. [MASM/TASM plugin](https://gitee.com/dosasm/masm-tasm/) for Vscode
+1. [Emu8086](https://emu8086-microprocessor-emulator.en.softonic.com/) for Windows.
+2. [MASM/TASM plugin](https://gitee.com/dosasm/masm-tasm/) for Vscode.
 3. [DOSBOX: an x86 emulator with DOS](https://www.dosbox.com/). 
 4. MASM tools (e.g., MASM.exe, LINK.exe, DEBUG.exe) can be found [here](https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/MASM).
 
 ## 其他
+### 8086 Instruction Set
+1. [Complete 8086 instruction set](./8086%20instruction%20set.md).
