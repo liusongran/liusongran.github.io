@@ -14,8 +14,9 @@
 **Format**: `MOV destination,source`
 
 **Usage**:
+
 | Destination | Source     | Example                                                   |
-|-------------|------------|-----------------------------------------------------------|
+|:------------|:-----------|:----------------------------------------------------------|
 | REG         | REG        | MOV AX, BX                                                |
 | REG         | SREG       | MOV AX, DS                                                |
 | REG         | memory     | MOV AX, ES:[BX]                                           |
