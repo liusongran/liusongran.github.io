@@ -1,5 +1,6 @@
 # Complete 8086 instruction set
-[TOC]
+* TOC
+{:toc}
 
 > Operand types:
 > - **REG**: AX, BX, CX, DX, AH, AL, BL, BH, CH, CL, DH, DL, DI, SI, BP, SP.
@@ -8,9 +9,11 @@
 > - **immediate (idata)**: 5, -24, 3Fh, 10001101b, etc...
 
 ### `MOV`
-- Description: The `MOV` instruction is the most important command in the 8086 because it moves data from one location to another. It also has the widest variety of parameters; so if the assembler programmer can use `MOV` effectively, the rest of the commands are easier to understand.
-- Format: `MOV destination,source`
-- Usage:
+**Description**: The `MOV` instruction is the most important command in the 8086 because it moves data from one location to another. It also has the widest variety of parameters; so if the assembler programmer can use `MOV` effectively, the rest of the commands are easier to understand.
+
+**Format**: `MOV destination,source`
+
+**Usage**:
 | destination  | source         | example |
 |:-------------|:---------------|:------|
 | REG          | idata          | MOV AX, 8  |
@@ -30,5 +33,5 @@
 | ~~idata~~        | ~~memory~~         | |
 | ~~idata~~        | ~~idata~~          | |
 
-- Note: The `MOV` instruction cannot set the value of the CS and IP registers.
+**Note**: The `MOV` instruction cannot set the value of the CS and IP registers.
 
