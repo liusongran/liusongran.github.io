@@ -2,11 +2,21 @@
 * TOC
 {:toc}
 
-> Operand types:
+> **Operand types:**
 > - **REG**: AX, BX, CX, DX, AH, AL, BL, BH, CH, CL, DH, DL, DI, SI, BP, SP.
 > - **SREG**: DS, ES, SS, and only as second operand: CS.
 > - **memory**: [BX], [BX+SI+7], variable, etc...
 > - **immediate (idata)**: 5, -24, 3Fh, 10001101b, etc...
+
+> **Basic commands for MASM DEBUG:**
+> R - lookup and modify registers
+> D - lookup memory cell
+> E - modify memory cell
+> U - disassembly
+> T/P - step in
+> G - continuous execution
+> A - add assembly code
+> Q - quit
 
 ### `MOV`
 **Description**: The `MOV` instruction is the most important command in the 8086 because it moves data from one location to another. It also has the widest variety of parameters; so if the assembler programmer can use `MOV` effectively, the rest of the commands are easier to understand.
@@ -32,10 +42,3 @@
 | memory      | idata      | ~~MOV [0035H], 35H MOV [BX], 10H~~ MOV BYTE PTR [BX], 10H |
 
 **Note**: The `MOV` instruction cannot set the value of the CS and IP registers.
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
