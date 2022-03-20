@@ -42,3 +42,8 @@
 | memory      | idata      | ~~MOV [0035H], 35H MOV [BX], 10H~~ MOV BYTE PTR [BX], 10H |
 
 **Note**: The `MOV` instruction cannot set the value of the CS and IP registers.
+
+> REF:
+> 1. https://c9x.me/x86/html/file_module_x86_id_203.html
+> 2. https://dsearls.org/courses/C391OrgSys/IntelAL/8086_instruction_set.html#MOV
+> 3. http://www.husseinsspace.com/teaching/udw/1996/asmnotes/chaptwo.htm
