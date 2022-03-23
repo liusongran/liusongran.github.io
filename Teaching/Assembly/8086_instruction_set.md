@@ -9,14 +9,14 @@
 > - **immediate (idata)**: 5, -24, 3Fh, 10001101b, etc...
 
 > **Basic commands for MASM DEBUG:**
-> R - lookup and modify registers
-> D - lookup memory cell
-> E - modify memory cell
-> U - disassembly
-> T/P - step in
-> G - continuous execution
-> A - add assembly code
-> Q - quit
+> - R - lookup and modify registers
+> - D - lookup memory cell
+> - E - modify memory cell
+> - U - disassembly
+> - T/P - step in
+> - G - continuous execution
+> - A - add assembly code
+> - Q - quit
 
 ### `MOV`
 **Description**: The `MOV` instruction is the most important command in the 8086 because it moves data from one location to another. It also has the widest variety of parameters; so if the assembler programmer can use `MOV` effectively, the rest of the commands are easier to understand.

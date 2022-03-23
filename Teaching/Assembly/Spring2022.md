@@ -27,13 +27,13 @@
 6. 第⑥讲(2022-03-17)\|\|讲义：[第5章-顺序结构程序](./Slides/Chapter5.pdf)。
 7. 第⑦讲(2022-03-22)\|\|[代码](https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/Code/Chapter6)，讲义：[第6章-分支结构程序](./Slides/Chapter6.pdf)。
 8. 第⑧讲(2022-03-24)\|\|[代码](https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/Code/Chapter7)，讲义：[第7章-循环结构程序](./Slides/Chapter7.pdf)。
-9. 第⑨讲(2022-03-29)\|\|讲义：
-10. 第⑩讲(2022-03-31)\|\|讲义：
-11. 第⑪讲(2022-04-05)\|\|讲义：
-12. 第⑫讲(2022-04-07)\|\|讲义：
-13. 第⑬讲(2022-04-12)\|\|讲义：
-14. 第⑭讲(2022-04-14)\|\|讲义：
-15. 第⑮讲(2022-04-19)\|\|讲义：
+9. 第⑨讲(2022-03-29)\|\|讲义：第7章-循环结构程序
+10. 第⑩讲(2022-03-31)\|\|[代码](https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/Code/Chapter8)讲义：[第8章-子程序设计](./Slides/Chapter8.pdf)。
+11. 第⑪讲(2022-04-05)\|\|讲义：第9章-条件汇编与宏指令，第10章-算数运算与代码转换。
+12. 第⑫讲(2022-04-07)\|\|讲义：第11章-列表与字符串操作。
+13. 第⑬讲(2022-04-12)\|\|讲义：第12章-输入输出与中断。
+14. 第⑭讲(2022-04-14)\|\|讲义：第13章-显示器程序设计。
+15. 第⑮讲(2022-04-19)\|\|讲义：第14章-键盘程序设计。
 16. 第⑯讲(2022-04-21)\|\|讲义：
 17. 第⑰讲(2022-04-26)\|\|讲义：
 18. 第⑱讲(2022-04-28)\|\|讲义：
@@ -54,6 +54,19 @@
 2. [MASM/TASM plugin](https://gitee.com/dosasm/masm-tasm/) for Vscode.
 3. [DOSBOX: an x86 emulator with DOS](https://www.dosbox.com/). 
 4. MASM tools (e.g., MASM.exe, LINK.exe, DEBUG.exe) can be found [here](https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/MASM).
+
+## 课程设计题目
+1. Bubble
+2. Calculator
+3. Guessing Game
+4. Hangman
+5. Maze
+6. Digital Clock
+7. Parking Management System
+8. Snake Game
+9. VU Assignments
+10. Word Hunt
+11. Tictactoe
 
 ## 其他
 ### 8086 Instruction Set

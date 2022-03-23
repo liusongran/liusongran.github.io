@@ -19,30 +19,30 @@ MBNEG: 	        MOV     AX, DSEG   	;段寄存器初值
                 MOV     SP, SIZE STK  	;设置堆栈指
 
                 ;srliu:mov data to SREG 
-                ;MOV     DS, AX          ;SREG <- REG
+                MOV     DS, AX          ;SREG <- REG
                 ;MOV     ES, DS          ;SREG <- SREG NOTE:invalid!
                 ;MOV     DS, 10H         ;SREG <- idata NOTE:invalid!
                 ;MOV     ES, [0]         ;SREG <- memory NOTE: invalid!
-                ;MOV     ES, DS:[0]      ;SREG <- SREG:[memory]
+                MOV     ES, DS:[0]      ;SREG <- memory
                 
-                LEA     AX, DATA1
+                ;LEA     AX, DATA1
 
                 ;srliu:mov data to memory
                 MOV     AL, 35H
-                ;MOV     DATA2, AL       ;memory <- REG
+                MOV     DATA2, AL       ;memory <- REG
                 MOV     DATA2, 35H      ;memory <- idata
                 ;MOV     DS:[0000H], 35H    ;memory <- idata NOTE:invalid!
                 ;MOV     [0035H], 35H
-                MOV     BX, 1000H
-                MOV     BYTE PTR [BX], 35H
-                MOV     WORD PTR [BX+SI], 35H
+                MOV     [BX+10H], AL
+                ;MOV     [BX], 35H
+                MOV     WORD PTR DS:[BX+SI], 35H
                 ;MOV     DATA2, DS       ;memory <- SREG
                 ;MOV     DATA2, DATA1    ;memory <- memory NOTE: invalid
                 
 
                 ;srliu: XCHG test
                 ;XCHG    AX, 3435H       ;idata NOTE: invalid
-                XCHG    AX, BX
+                ;XCHG    AX, BX
                 ;XCHG    DS, ES          ;SREG NOTE: invalid
                 ;XCHG    DS, AX          
                 ;XCHG    [BX], [BX+10]   ;memory NOTE: invalid
@@ -63,5 +63,6 @@ MBNEG: 	        MOV     AX, DSEG   	;段寄存器初值
                 MOV	DATA2+2, BL
                 MOV	AX, 4C00H
                 INT	21H
+                
 CSEG	        ENDS
-END	MBNEG
+                END	MBNEG
