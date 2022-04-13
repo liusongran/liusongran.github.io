@@ -1,0 +1,34 @@
+DSEG   SEGMENT
+STUDNT RECORD        N:8,S:1,L:5,T:2
+SRCD   STUDNT        <1,1,18,1>
+       STUDNT        <2,0,19,1>
+       STUDNT        <3,1,20,3>
+       STUDNT        <4,1,17,0>
+       STUDNT        <5,0,17,0>
+       STUDNT        <200,1,21,2>
+RLNT   DB	       6
+TOTAL  DB	       0
+DSEG   ENDS
+
+CSEG   SEGMENT
+	ASSUME CS:CSEG,DS:DSEG
+START:	MOV    AX, DSEG
+       MOV    DS, AX
+       LEA    SI, SRCD
+	MOV	CL, RLNT
+	MOV	DL, 0
+AGAIN:	MOV	AX, [SI]
+	TEST	AL, MASK  S
+	JZ	CHCNT
+	AND	AX, MASK  T
+	CMP	AX, 01
+	JNZ	CHCNT
+	INC	DL
+CHCNT: ADD	SI, 2
+	DEC	CL
+	JNZ	AGAIN
+	MOV	TOTAL, DL
+	MOV	AH, 4CH
+	INT	21H
+CSEG	ENDS
+	END	START
