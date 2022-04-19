@@ -1,0 +1,48 @@
+SSEG    SEGMENT	STACK
+		DB  80H  DUP (?)
+SSEG    ENDS
+CSEG    SEGMENT
+		ASSUME	CS:CSEG,SS:SSEG
+; 在当前光标处显示AL中的字符
+DISASC  PROC
+		PUSH    AX
+		MOV		AH, 14
+		INT		10H
+		POP		AX
+		RET
+DISASC  ENDP
+; 显示AL中的内容
+
+DISAL   PROC
+		PUSH    AX
+		CALL    BHTOA
+		XCHG    AH, AL
+		CALL    DISASC
+		MOV		AL, AH
+		CALL    DISASC
+		POP		AX
+		RET
+DISAL   ENDP
+
+BIOS    PROC    FAR
+		PUSH    DS
+		XOR		AX, AX
+		PUSH    AX
+AGAIN:  MOV		AH, 0		;INT 16H的0号功能
+		INT		16H
+		PUSH    AX
+		CALL    DISAL
+		MOV		AL, '-'
+		CALL    DISASC
+		MOV		AL, AH
+		CALL    DISAL
+		MOV		AL, ' '
+		CALL    DISASC
+		POP		AX
+		CMP		AL, 03H
+		JNZ		AGAIN
+		RET
+BIOS    ENDP
+CSEG    ENDS
+		END		BIOS
+

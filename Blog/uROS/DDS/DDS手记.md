@@ -143,11 +143,54 @@ DDS-SECURITY规范总共有两个正式版本。
 3. [DDS和TSN：实时数据交换的未来？](https://www.platforu.com/DetailsPage?id=29)
 4. [DDS and TSN: The Future for Real-Time Data Exchange?](https://www.rti.com/blog/dds-and-tsn-the-future-for-real-time-data-exchange)
 
+# 二、Fast DDS ([Fast RTPS](https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/getting_started.html))
 
+## A. DDS介绍
 
+### 1. The DCPS conceptual model
 
+![../../_images/dds_domain.svg](https://fast-dds.docs.eprosima.com/en/latest/_images/dds_domain.svg)
 
+- **Publisher**
+- **Subscriber**
+- **Topic**
+- **Domain**
 
+### 2. What is RTPS?
+
+The [Real-Time Publish Subscribe (RTPS)](https://www.omg.org/spec/DDSI-RTPS/2.2/PDF) protocol, developed to support DDS applications, is a publication-subscription communication middleware over best-effort transports such as UDP/IP. Furthermore, Fast DDS provides support for TCP and Shared Memory (SHM) transports.
+
+![../../_images/rtps_domain.svg](https://fast-dds.docs.eprosima.com/en/latest/_images/rtps_domain.svg)
+
+## B. Library Overview
+
+### 1. Architecture
+
+The architecture of *Fast DDS* is shown in the figure below, where a layer model with the following different environments can be seen.
+
+- **Application layer**. The user application that makes use of the *Fast DDS* API for the implementation of communications in distributed systems.
+- **Fast DDS layer**. Robust implementation of the DDS communications middleware. It allows the deployment of one or more DDS domains in which DomainParticipants within the same domain exchange messages by publishing/subscribing under a domain topic.
+- **RTPS layer**. Implementation of the [Real-Time Publish-Subscribe (RTPS) protocol](https://www.omg.org/spec/DDSI-RTPS/2.2) for interoperability with DDS applications. This layer acts an abstraction layer of the transport layer.
+- **Transport Layer**. *Fast DDS* can be used over various transport protocols such as unreliable transport protocols (UDP), reliable transport protocols (TCP), or shared memory transport protocols (SHM).
+
+<img src="https://fast-dds.docs.eprosima.com/en/latest/_images/library_overview.svg" alt="../../_images/library_overview.svg" style="zoom:50%;" />
+
+### 2. Programming and execution model
+
+1. **Concurrency and multithreading**
+
+   *Fast DDS* implements a concurrent multithreading system. Each DomainParticipant spawns a set of threads to take care of **background tasks** such as logging, message reception, and asynchronous communication. This should not impact the way you use the library, i.e. the *Fast DDS* API is thread safe, so you can fearlessly call any methods on the same DomainParticipant from different threads. However, this multithreading implementation must be taken into account when external functions access to resources that are modified by threads running internally in the library. An example of this is the modified resources in the entity listener callbacks. The following is a brief overview of how *Fast DDS* multithreading schedule work:
+
+   - **Main thread**: Managed by the application.
+   - **Event thread**: Each DomainParticipant owns one of these. It processes periodic and triggered time events.
+   - **Asynchronous writer thread**: This thread manages asynchronous writes for all DomainParticipants. Even for synchronous writers, some forms of communication must be initiated in the background.
+   - **Reception threads**: DomainParticipants spawn a thread for each reception channel, where the concept of a channel depends on the transport layer (e.g. a UDP port).
+
+2. **Event-driven architecture**
+
+   There is a time-event system that enables *Fast DDS* to respond to certain conditions, as well as schedule periodic operations. Few of them are visible to the user since most are related to DDS and RTPS metadata. However, the user can define in their application periodic time-events by inheriting from the `TimedEvent` class.
+
+   
 
 
 
