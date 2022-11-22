@@ -13,7 +13,7 @@ Intermittent Systems, Real-time Embedded Systems, Robot Operating System, On-Dev
 - Nov 23, 2022 || **I am actively looking for motivated undergraduate/master students.**
 - Nov 16, 2022 || Our paper on firmware update for Intermittent systems has been accepted by [DATE2023](https://www.date-conference.com/)!
 
-# Selected Recent Peer-Reviewed Publications
+# Selected Publications
 - [Light Flash Write for Efficient Firmware Update on Energy-harvesting IoT Devices](). In 2023 Design, Automation & Test in Europe Conference & Exhibition (DATE).
 - [Adaptive Task-based Intermittent Computing System with Parallel State Backup](). In IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2022.
 - [Surviving Transient Power Failures with SRAM Data Retention](). In 2021 Design, Automation & Test in Europe Conference & Exhibition (DATE).
