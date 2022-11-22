@@ -5,7 +5,7 @@ SSEG	ENDS
 
 DSEG	SEGMENT
 ARG	DW      7138H,84A6H,29EH
-MAXDW	?
+MAX     DW      ?	
 DSEG	ENDS
 
 CSEG	SEGMENT
@@ -28,5 +28,5 @@ FMAX1:  CMP     AX, [SI+4]	;大数与第3个数比较
 FMAX2:  MOV     MAX,AX	        ;保存最大值
         MOV	 AH,4CH
         INT	 21H
-CSEG   ENDS
-ENDF MAX
+CSEG    ENDS
+        END    FMAX

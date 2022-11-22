@@ -66,7 +66,7 @@ OMG DDS标准主要包括以下规范：
 
 ### 1. 核心规范
 
--  **[DDS v1.4](https://www.omg.org/spec/DDS/1.4/PDF)**：DDS 规范描述了**以数据为中心的发布-订阅 (DCPS) 模型**，该模型用于分布式应用程序通信和集成。
+- **[DDS v1.4](https://www.omg.org/spec/DDS/1.4/PDF)**：DDS 规范描述了**以数据为中心的发布-订阅 (DCPS) 模型**，该模型用于分布式应用程序通信和集成。
 - **[DDSI-RTPS v2.3](https://www.omg.org/spec/DDSI-RTPS/2.3/PDF)**：RTPS规范定义了**实时发布-订阅协议 (RTPS)**，此协议为DDS标准中互操作有线协议。
 - **[DDS-XTypes v1.3](https://www.omg.org/spec/DDS-XTypes/1.3/PDF)**：此规范定义DDS**数据类型系统**以及DDS数据的**序列化表示方法**。
 - **[DDS-Security v1.1](https://www.omg.org/spec/DDS-SECURITY/1.1/PDF)**：此规范为DDS实现定义了**安全模型**和服务插件接口 (SPI) 架构。
@@ -92,7 +92,7 @@ OMG DDS标准主要包括以下规范：
 
 - [**DDS-WEB v1.0**](https://www.omg.org/spec/DDS-WEB/1.0/PDF)：此规范定义了一个独立于平台的抽象交互模型，用于说明Web客户端应该如何访问DDS系统以及一组DDS到特定 Web 平台的映射，这些特定 Web 平台在标准Web技术和协议方面实现了平台无关模型 (PIM)。
 - [**DDS-OPCUA v1.0**](https://www.omg.org/spec/DDS-OPCUA/1.0/PDF)：此规范定义了一个标准的、可配置的网关，它支持使用DDS的系统和使用OPCUA的系统之间的互操作和信息交换。
-- **[ DDS-XRCE v1.0](https://www.omg.org/spec/DDS-XRCE/1.0/PDF)**：此规范定义了资源受限的低功耗设备向DDS域发布和订阅数据的协议。XRCE协议将XRCE客户端（Client）与DDS 代理（Agent）连接，该DDS代理充当连接至DDS域的网关。
+- **[DDS-XRCE v1.0](https://www.omg.org/spec/DDS-XRCE/1.0/PDF)**：此规范定义了资源受限的低功耗设备向DDS域发布和订阅数据的协议。XRCE协议将XRCE客户端（Client）与DDS 代理（Agent）连接，该DDS代理充当连接至DDS域的网关。
 
 ### 6. 正在进行研究的规范（未发布）
 
@@ -162,6 +162,25 @@ The [Real-Time Publish Subscribe (RTPS)](https://www.omg.org/spec/DDSI-RTPS/2.2/
 
 ![../../_images/rtps_domain.svg](https://fast-dds.docs.eprosima.com/en/latest/_images/rtps_domain.svg)
 
+#### 1. RTPS协议简介
+
+| 概念                              | 说明                                                         |
+| --------------------------------- | ------------------------------------------------------------ |
+| **Domain**（域）                  | 定义了一个独立的通信平面，多个域是同时独立存在的。域包含了多个Participant和发送接收数据的元素。 |
+| **Participant**（参与者）         | 包含多个Reader端点和Writer端点                               |
+| **Reader**（读者）                | 接收数据端点                                                 |
+| **Writer**（写者）                | 发送数据端点                                                 |
+| **Topic**（主题）                 | 通信是围绕着Topic进行的，Topic定义了要通信的数据内容，**Topic不属于任何Participant**，所有关注该Topic的Participant都监测其数据变化，并保持最新。 |
+| **Change**（变化）                | 通信单元，表示Topic的一次更新。                              |
+| **History**（Change数据缓冲队列） | 端点会将Change注册到相应的History里                          |
+
+以Publisher通过Writer端点发送Change为例，过程如下：
+
+- 将Change添加到WriterHistory
+- Writer通知所有它知道的Reader
+- 所有感兴趣的Reader都请求该Change
+- Reader接收Change并添加到ReaderHistory
+
 ## B. Library Overview
 
 ### 1. Architecture
@@ -179,7 +198,14 @@ The architecture of *Fast DDS* is shown in the figure below, where a layer model
 
 1. **Concurrency and multithreading**
 
-   *Fast DDS* implements a concurrent multithreading system. Each DomainParticipant spawns a set of threads to take care of **background tasks** such as logging, message reception, and asynchronous communication. This should not impact the way you use the library, i.e. the *Fast DDS* API is thread safe, so you can fearlessly call any methods on the same DomainParticipant from different threads. However, this multithreading implementation must be taken into account when external functions access to resources that are modified by threads running internally in the library. An example of this is the modified resources in the entity listener callbacks. The following is a brief overview of how *Fast DDS* multithreading schedule work:
+   > eProsima Fast RTPS是并发的、基于事件的。每个Paricipant都生成一些线程去管理后台任务，如日志、消息接收、异步通信等。但这并不会影响到对这个库的使用：公共API是线程安全的，你可以放心的从不同线程上调用同一个Participant的任何方法。
+   >
+   > - **主线程**：由应用程序管理
+   > - **事件线程**：每个Participant都拥有一个，它用于处理周期性的触发事件。
+   > - **异步写线程**：为所有的Participant管理异步写操作，甚至对于同步写操作来说，也必须在后台初始化一些形式的通信。
+   > - **接收线程**：Pariticipant为每一个接收通道生成一个线程。（接收通道就是传输层的通道概念）
+
+   *Fast DDS* implements a **concurrent multithreading system**. Each DomainParticipant spawns a set of threads to take care of **background tasks** such as logging, message reception, and asynchronous communication. This should not impact the way you use the library, i.e. the *Fast DDS* API is thread safe, so you can fearlessly call any methods on the same DomainParticipant from different threads. However, this multithreading implementation must be taken into account when external functions access to resources that are modified by threads running internally in the library. An example of this is the modified resources in the entity listener callbacks. The following is a brief overview of how *Fast DDS* multithreading schedule work:
 
    - **Main thread**: Managed by the application.
    - **Event thread**: Each DomainParticipant owns one of these. It processes periodic and triggered time events.
