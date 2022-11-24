@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Songran Liu (刘松冉)"
-description              : "智慧系统国际合作联合实验特聘助理教授"
+description              : "Key Laboratory of Intelligent Computing in Medical Image"
 repository               : "liusongran/liusongran.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -21,10 +21,10 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "刘松冉"
+  name             : "Songran Liu"
   avatar           : "images/android-chrome-512x512.png"
-  bio              : "东北大学"
-  location         : "辽宁 沈阳"
+  bio              : "Northeastern University, China"
+  location         : "Shenyang, Liaoning"
   employer         : #"Hefei General Machinery Research Institute"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=djVfjSQAAAAJ&hl"
