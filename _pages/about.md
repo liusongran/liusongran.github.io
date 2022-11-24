@@ -30,7 +30,7 @@ redirect_from:
 
 # 📝 代表性论文
 ---
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2023</div><img src='images/date203.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2023</div><img src='images/paper/date2023.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 -	Light Flash Write for Efficient Firmware Update on Energy-harvesting IoT Devices. (CCF-B)
@@ -39,7 +39,7 @@ redirect_from:
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TCAD 2022</div><img src='images/sna2021.svg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TCAD 2022</div><img src='images/paper/tcad2022.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 -	Adaptive Task-based Intermittent Computing System with Parallel State Backup. (CCF-A)
@@ -48,7 +48,7 @@ redirect_from:
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2021</div><img src='images/ijaem2020.svg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2021</div><img src='images/paper/date2021.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 -	Surviving Transient Power Failures with SRAM Data Retention. (CCF-B)
