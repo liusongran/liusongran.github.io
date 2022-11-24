@@ -30,15 +30,15 @@ redirect_from:
 
 # 📝 代表性论文
 ---
--	Light Flash Write for Efficient Firmware Update on Energy-harvesting IoT Devices. (CCF-B)
+-	Light Flash Write for Efficient Firmware Update on Energy-harvesting IoT Devices. DATE2023. (CCF-B)
 [[网页]]() [[预览]]() [[下载]]()
--	Adaptive Task-based Intermittent Computing System with Parallel State Backup. (CCF-A)
+-	Adaptive Task-based Intermittent Computing System with Parallel State Backup. IEEE TCAD, 2022. (CCF-A)
 [[网页]]() [[预览]]() [[下载]]()
--	Surviving Transient Power Failures with SRAM Data Retention. (CCF-B)
+-	Surviving Transient Power Failures with SRAM Data Retention. DATE2021. (CCF-B)
 [[网页]]() [[预览]]() [[下载]]()
-- LATICS: A low-overhead adaptive task-based intermittent computing system. (CCF-A)
+- LATICS: A low-overhead adaptive task-based intermittent computing system. IEEE TCAD, 2021. (CCF-A)
 [[网页]]() [[预览]]() [[下载]]()
-- EDF-VD scheduling of mixed-criticality systems with degraded quality guarantees. (CCF-A)
+- EDF-VD scheduling of mixed-criticality systems with degraded quality guarantees. RTSS2016. (CCF-A)
 [[网页]]() [[预览]]() [[下载]]()
 - `Songran Liu`, Nan Guan, Dong Ji, Weichen Liu, Xue Liu, Wang Yi, Leaking your engine speed by spectrum analysis of real-Time scheduling sequences. *Journal of Systems Architecture*. 2019. (JCR:Q2; IF:4.838)  
 [[网页]]() [[预览]]() [[下载]]()
@@ -46,7 +46,7 @@ redirect_from:
 
 
 # 📝 项目
-
+---
 ### 间歇计算系统
 - LATICS: A low-overhead adaptive task-based intermittent computing system.  
 [[网页]]()
@@ -59,7 +59,12 @@ redirect_from:
 [[网页]]()
 
 
+# 📝 教学
+---
+- [《8086汇编语言程序设计》](../Teaching/Assembly/Spring2022.md)
+
 <span class='anchor' id='-ryjx'></span>
 
 # 🏅 荣誉奖项
+---
 - *2022.11* 获得 CCF-B类会议DATE2023 Best Paper Candidate
