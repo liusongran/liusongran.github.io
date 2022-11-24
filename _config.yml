@@ -8,7 +8,7 @@
 # Site Settings
 title                    : "Songran Liu (刘松冉)"
 description              : "智慧系统国际合作联合实验特聘助理教授"
-#repository               : "tangjyan/tangjyan.github.io"
+repository               : "liusongran/liusongran.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -27,7 +27,7 @@ author:
   location         : "辽宁 沈阳"
   employer         : #"Hefei General Machinery Research Institute"
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=djVfjSQAAAAJ&hl=zh-CN"
+  googlescholar    : "https://scholar.google.com/citations?user=djVfjSQAAAAJ&hl"
   email            : "liusongran@cse.neu.edu.cn"
   researchgate     : "https://www.researchgate.net/profile/Liu-Songran"
   uri              : 
@@ -44,7 +44,7 @@ author:
   impactstory      : # e.g., "https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         : # e.g., "linkedin username"
-  dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
+  dblp             : "https://dblp.org/pid/95/4353.html"
   orcid            : "https://orcid.org/my-orcid?orcid=0000-0002-9234-5799"
   pinterest        :
   soundcloud       :
