@@ -30,7 +30,7 @@ redirect_from:
 
 # 📝 代表性论文
 ---
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2023</div><img src='images/sensors2022.svg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2023</div><img src='images/date203.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 -	Light Flash Write for Efficient Firmware Update on Energy-harvesting IoT Devices. (CCF-B)
