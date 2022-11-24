@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-我现工作于东北大学计算机科学与工程学院，东北大学智慧系统国际合作联合实验，任特聘助理教授。东北大学博士，师从王义教授、[关楠](https://www.cityu.edu.hk/stfprofile/nanguan.htm)教授。现已在国际顶级学术会议、期刊发表论文10余篇。
+我现工作于东北大学计算机科学与工程学院，智慧系统国际合作联合实验，任特聘助理教授。东北大学博士，师从王义教授、[关楠](https://www.cityu.edu.hk/stfprofile/nanguan.htm)教授。现已在国际顶级学术会议、期刊发表论文10余篇。
  <a href='https://scholar.google.com/citations?user=SCHOLAR_ID&user=djVfjSQAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>。
 
 我的研究领域包括：
@@ -29,8 +29,6 @@ redirect_from:
 <span class='anchor' id='-lwzl'></span>
 
 # 📝 代表性论文
-
-### 英文
 ---
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2023</div><img src='images/sensors2022.svg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
