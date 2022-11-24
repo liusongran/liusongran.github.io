@@ -1,5 +1,4 @@
 # 📝 Open-sourced Projects
----
 #### 间歇计算系统
 - LATICS: A low-overhead adaptive task-based intermittent computing system.  
 [[网页]]()
