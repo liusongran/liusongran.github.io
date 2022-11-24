@@ -8,9 +8,9 @@
           "type": "image/png"
        },
        {
-        "src": "/main.jpg",
-        "sizes": "1596x1596",
-        "type": "image/jpg"
+        "src": "/ciations.png",
+        "sizes": "512x512",
+        "type": "image/png"
         }
     ],
     "theme_color": "#FFFFFF",

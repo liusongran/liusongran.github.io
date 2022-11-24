@@ -30,50 +30,16 @@ redirect_from:
 
 # 📝 代表性论文
 ---
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2023</div><img src='images/paper/date2023.jpg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
 -	Light Flash Write for Efficient Firmware Update on Energy-harvesting IoT Devices. (CCF-B)
 [[网页]]() [[预览]]() [[下载]]()
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE TCAD 2022</div><img src='images/paper/tcad2022.jpg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
 -	Adaptive Task-based Intermittent Computing System with Parallel State Backup. (CCF-A)
 [[网页]]() [[预览]]() [[下载]]()
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">DATE 2021</div><img src='images/paper/date2021.jpg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
 -	Surviving Transient Power Failures with SRAM Data Retention. (CCF-B)
 [[网页]]() [[预览]]() [[下载]]()
-
-</div>
-</div>
-
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">EMSOFT 2021</div><img src='images/ijaem2020.svg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
 - LATICS: A low-overhead adaptive task-based intermittent computing system. (CCF-A)
 [[网页]]() [[预览]]() [[下载]]()
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">RTSS 2016</div><img src='images/ijaem2020.svg' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
 - EDF-VD scheduling of mixed-criticality systems with degraded quality guarantees. (CCF-A)
 [[网页]]() [[预览]]() [[下载]]()
-</div>
-</div>
-
 - `Songran Liu`, Nan Guan, Dong Ji, Weichen Liu, Xue Liu, Wang Yi, Leaking your engine speed by spectrum analysis of real-Time scheduling sequences. *Journal of Systems Architecture*. 2019. (JCR:Q2; IF:4.838)  
 [[网页]]() [[预览]]() [[下载]]()
 
