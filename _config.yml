@@ -7,16 +7,16 @@
 
 # Site Settings
 title                    : "Songran Liu (刘松冉)"
-description              : "电磁无损检测"
+description              : "@Key Laboratory of Intelligent Computing in Medical Image"
 #repository               : "tangjyan/tangjyan.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
-google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
+google_analytics_id      : G-58N181J73R # get google_analytics_id from https://analytics.google.com/analytics/
 
 # SEO Related
-google_site_verification :  fQZQD0EwLaSOrp3EbALt2rjxHEY9pUvWuh1fS96xgNk # get google_site_verification from https://search.google.com/search-console/about
-bing_site_verification   : 56D1B3DBCF345410DA9431AFE01788E7 # get bing_site_verification from https://www.bing.com/webmasters/about
+google-site-verification : qWvppTGA5GAuOY_Qa2yPa1OqFAAbrd7QzFjvZ9Qu-c8 # get google_site_verification from https://search.google.com/search-console/about
+bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
 baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
 
 # Site Author
