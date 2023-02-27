@@ -1,12 +1,33 @@
-﻿---
-permalink: /teaching
-title: ""
-excerpt: ""
-author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
----
+﻿<h1 align="center">
+AcadHomepage
+</h1>
+
+<div align="center">
+
+[![](https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
+[![](https://img.shields.io/github/forks/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
+[![](https://img.shields.io/github/issues/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
+[![](https://img.shields.io/github/license/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io/blob/main/LICENSE)  | [中文文档](../README.md) 
+</div>
+
+<p align="center">A Modern and Responsive Academic Personal Homepage</p>
+
+<p align="center">
+    <br>
+    <img src="screenshot.png" width="100%"/>
+    <br>
+</p>
+
+Some examples:
+- [Demo Page](https://rayeren.github.io/acad-homepage.github.io/)
+- [Personal Homepage of the author](https://rayeren.github.io/)
+
+## Key Features
+- **Automatically update google scholar citations**: using the google scholar crawler and github action, this REPO can update the author citations and publication citations automatically.
+- **Support Google analytics**: you can trace the traffics of your homepage by easy configuration.
+- **Responsive**: this homepage automatically adjust for different screen sizes and viewports.
+- **Beautiful and Simple Design**: this homepage is beautiful and simple, which is very suitable for academic personal homepage.
+- **SEO**: search Engine Optimization (SEO) helps search engines find the information you publish on your homepage easily, then rank it against similar websites.
 
 # 8086汇编语言程序设计
 
