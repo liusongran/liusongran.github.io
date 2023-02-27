@@ -1,4 +1,14 @@
-﻿# 8086汇编语言程序设计
+﻿---
+layout:		post
+title: 		8086 assembly
+date: 		2023-02-26 15:10:56
+author:		Songran Liu
+catalog:	 true
+tags:
+- python
+---
+
+# 8086汇编语言程序设计
 
 ## 课程信息
 - 周学时：4 + 1.5
