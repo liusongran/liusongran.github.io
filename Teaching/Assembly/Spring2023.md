@@ -1,11 +1,11 @@
 ﻿---
-layout:		post
-title: 		8086 assembly
-date: 		2023-02-26 15:10:56
-author:		Songran Liu
-catalog:	 true
-tags:
-- python
+permalink: /teaching
+title: ""
+excerpt: ""
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
 ---
 
 # 8086汇编语言程序设计
