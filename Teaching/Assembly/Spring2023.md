@@ -1,34 +1,3 @@
-﻿<h1 align="center">
-AcadHomepage
-</h1>
-
-<div align="center">
-
-[![](https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/forks/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/issues/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io)
-[![](https://img.shields.io/github/license/RayeRen/acad-homepage.github.io)](https://github.com/RayeRen/acad-homepage.github.io/blob/main/LICENSE)  | [中文文档](../README.md) 
-</div>
-
-<p align="center">A Modern and Responsive Academic Personal Homepage</p>
-
-<p align="center">
-    <br>
-    <img src="screenshot.png" width="100%"/>
-    <br>
-</p>
-
-Some examples:
-- [Demo Page](https://rayeren.github.io/acad-homepage.github.io/)
-- [Personal Homepage of the author](https://rayeren.github.io/)
-
-## Key Features
-- **Automatically update google scholar citations**: using the google scholar crawler and github action, this REPO can update the author citations and publication citations automatically.
-- **Support Google analytics**: you can trace the traffics of your homepage by easy configuration.
-- **Responsive**: this homepage automatically adjust for different screen sizes and viewports.
-- **Beautiful and Simple Design**: this homepage is beautiful and simple, which is very suitable for academic personal homepage.
-- **SEO**: search Engine Optimization (SEO) helps search engines find the information you publish on your homepage easily, then rank it against similar websites.
-
 # 8086汇编语言程序设计
 
 ## 课程信息
@@ -40,7 +9,7 @@ Some examples:
 - 授课对象：本科生（计算机2101、计算机2102）
 
 ## 课程通知
-作业提交方式：以QQ群（???）通知为准。如无特别声明，作业的截止日期为下一周上课之前。
+作业提交方式：以QQ群（619592416）通知为准。如无特别声明，作业的截止日期为下一周上课之前。
 
 ## 课程简介
 《汇编语言程序设计》计算机科学与技术等专业学生的专业基础课。它不仅是计算机组成原理、接口技术、操作系统等其它课程的必要先行课，而且对于训练学生掌握程序设计技术、熟练上机操作和程序调试技术有重要作用。
@@ -48,22 +17,22 @@ Some examples:
 本课程的主要任务是结合一种机型讲述计算机的结构；汇编语言的词法、语法及伪指令；汇编语言中数据的表示方法；汇编语言的指令系统；汇编语言程序的基本控制结构及其程序设计技巧；子程序的设计方法；输入输出及中断程序的设计方法和技巧。使得学生通过本门课程的学习，掌握汇编语言程序的基本概念、基本方法和基本技巧，培养学生阅读、分析、设计和调试汇编语言的能力。
 
 ## 教学内容
-1. 第①讲(2022-03-01)\|\|讲义：[第1章-概述](./Slides2023/chapter1.pdf)，[第2章-计算机运算基础](./Slides2023/chapter2.pdf)。
-2. 第②讲(2022-03-03)\|\|讲义：[第2章-计算机运算基础](./Slides2023/chapter2.pdf)，[第3章-微型计算机的结构-上]()。
-3. 第③讲(2022-03-08)\|\|讲义：[第3章-微型计算机的结构-中]()。
-4. 第④讲(2022-03-10)\|\|讲义：[第3章-微型计算机的结构-下]()。
-5. 第⑤讲(2022-03-15)\|\|讲义：[第3章-微型计算机的结构-寻址方式（补）]()，[第4章-汇编语言]()。
-6. 第⑥讲(2022-03-17)\|\|讲义：[第5章-顺序结构程序]()。
-7. 第⑦讲(2022-03-22)\|\|讲义：[第6章-分支结构程序]()，[代码]()，习题。
-8. 第⑧讲(2022-03-24)\|\|讲义：[第7章-循环结构程序]()，[代码]()，习题。
-9. 第⑨讲(2022-03-29)\|\|讲义：[第7章-循环结构程序]()，[代码]()，习题。
-10. 第⑩讲(2022-03-31)\|\|讲义：[第8章-子程序设计]()，[代码]()，习题。
-11. 第⑪讲(2022-04-05)\|\|讲义：[第8章-子程序设计]()，[第9章-条件汇编与宏指令]()，习题。
-12. 第⑫讲(2022-04-07)\|\|讲义：[第10章-算数运算与代码转换]()，习题。
-13. 第⑬讲(2022-04-12)\|\|讲义：[第11章-列表与字符串操作]()。
-14. 第⑭讲(2022-04-14)\|\|讲义：[第11章-列表与字符串操作]()，习题。
-15. 第⑮讲(2022-04-19)\|\|讲义：[第12章-输入输出与中断-上]()。
-16. 第⑯讲(2022-04-21)\|\|讲义：[第12章-输入输出与中断-下]()。
+1. 第①讲(2022-03-01)\|\|讲义：[第1章-概述](./Slides2023/chapter1.pdf)。
+2. 第②讲(2022-03-03)\|\|讲义：[第2章-计算机运算基础](./Slides2023/chapter2.pdf)，[第3章-微型计算机的结构-上](./Slides2023/chapter3-a.pdf)。
+3. 第③讲(2022-03-08)\|\|讲义：[第3章-微型计算机的结构-中](./Slides2023/chapter3-b.pdf)。
+4. 第④讲(2022-03-10)\|\|讲义：第3章-微型计算机的结构-下。
+5. 第⑤讲(2022-03-15)\|\|讲义：第3章-微型计算机的结构-寻址方式（补），第4章-汇编语言。
+6. 第⑥讲(2022-03-17)\|\|讲义：第5章-顺序结构程序。
+7. 第⑦讲(2022-03-22)\|\|讲义：第6章-分支结构程序。
+8. 第⑧讲(2022-03-24)\|\|讲义：第7章-循环结构程序。
+9. 第⑨讲(2022-03-29)\|\|讲义：第7章-循环结构程序。
+10. 第⑩讲(2022-03-31)\|\|讲义：第8章-子程序设计。
+11. 第⑪讲(2022-04-05)\|\|讲义：第8章-子程序设计，第9章-条件汇编与宏指令。
+12. 第⑫讲(2022-04-07)\|\|讲义：第10章-算数运算与代码转换。
+13. 第⑬讲(2022-04-12)\|\|讲义：第11章-列表与字符串操作。
+14. 第⑭讲(2022-04-14)\|\|讲义：第11章-列表与字符串操作。
+15. 第⑮讲(2022-04-19)\|\|讲义：第12章-输入输出与中断-上。
+16. 第⑯讲(2022-04-21)\|\|讲义：第12章-输入输出与中断-下。
 
 ## 参考书目
 1. 《[汇编语言程序设计](https://book.douban.com/subject/1020163/) - 齐志儒，高福祥主编》，东北大学出版社。
