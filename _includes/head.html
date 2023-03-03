@@ -16,4 +16,9 @@
 <meta http-equiv="cleartype" content="on">
 <head>
   <base target="_blank">
+  <!-- 配置Google Analytics -->
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+  {% include google-analytics.html %}
+  {% endif %}
 </head>
+
