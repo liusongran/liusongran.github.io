@@ -14,6 +14,8 @@ START:  MOV AX, DSEG
         MOV DS,  AX
         MOV AX, SSEG
         MOV SS, AX
+        MOV AL, 9BH
+        NEG AL
         LEA DX, RU
         MOV AH, 09H
         INT 21H

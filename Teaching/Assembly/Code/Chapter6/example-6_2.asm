@@ -17,6 +17,13 @@ FMAX:   MOV     AX, DSEG
 	MOV     SS, AX
 	MOV     SP, SIZE STK
         LEA     SI, ARG	        ;取数据首址
+
+        MOV     AX, 01H         ;PE=1, PO=0, 1的个数为偶数则PF=1即显示PE，1的个数为奇数则PF=0显示PO
+        AND     AX, AX
+        MOV     AX, 03H
+        AND     AX, AX
+        MOV     AX, 102 GT 51
+        MOV     BX, 75H XOR 49H
         MOV     AX, [SI]        ;取第1个数
         MOV     BX, [SI+2]      ;取第2个数
         CMP     AX, BX		;两数比较
