@@ -202,914 +202,303 @@ mark .md-meta { color: rgb(0, 0, 0); }
 mjx-container { break-inside: avoid; }
 
 
-/*
- * Copyright (C) 2018 Drake, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-:root {
-    --monospace: "Iosevka Medium", HYZhengYuan, "JetBrains Mono", "Fira Code", Menlo, "Ubuntu Mono", Consolas; /*code font*/
-    --text-font: var(--monospace); /*default font*/
-    --title-font: var(--monospace); /*title font*/
-
-    --text-color: #304455;
-    --bg-color: #ffffff;
-    --control-text-color: var(--text-color);
-    --meta-content-color: var(--text-color);
-    --active-file-border-color: var(--drake-accent);
-    --rawblock-edit-panel-bd: var(--code-block-bg-color);
-    --item-hover-bg-color: #E5E5E596;
-    --active-file-bg-color: var(--item-hover-bg-color);
-
-    --drake-accent: #64b587;
-    --drake-highlight: #d63200;
-    --a-text-color: var(--drake-accent);
-    --outline-active-color: var(--a-text-color);
-    --code-block-bg-color: #f8f8f8;
-    --code-block-text-color: #24292e;
-    --title-text-color: #273849;
-    --blockquote-border-color: #f66;
-    --blockquote-bg-color: #f8f8f8;
-    --strong-text-color: var(--title-text-color);
-    --h2-underline-bg: var(--title-text-color);
-    --horizontal-divider-color: #e7e7e7;
-    --height-light-bg-color: #e7ecf3;
-    --yaml-text-color: #777777;
-    --yaml-bg-color: #f7f7f7;
-    --footnotes-bg-color: #3c3d3e;
-    --footnotes-highlight: #FFD760;
-    --table-border-color: #dfe2e5;
-    --table-header-bg-color: #f2f2f2;
-    --table-bg-color: #fafafa;
-    --input-bg-color: #f2f2f2;
-    --btn-hover-bg-color: #f2f2f2;
-    --checkbox-checked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M425.984 726.016l384-384-59.99-61.995-324.01 324.011-152.021-152.021L213.973 512zm384-598.016q36.01 0 61.013 25.984T896 213.974v596.01q0 34.005-25.003 59.99t-61.013 25.983h-596.01q-36.011 0-61.014-25.984t-25.003-59.989v-596.01q0-34.006 25.003-59.99T213.973 128h596.011z' fill='%2365b73b'/%3E%3C/svg%3E");
-    --checkbox-unchecked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M810.667 213.333v597.334H213.333V213.333h597.334m0-85.333H213.333C166.4 128 128 166.4 128 213.333v597.334C128 857.6 166.4 896 213.333 896h597.334C857.6 896 896 857.6 896 810.667V213.333C896 166.4 857.6 128 810.667 128z' fill='%23333333'/%3E%3C/svg%3E");
-}
-
 html {
-    font-size: 16px;
+	font-size: 19px;
 }
 
+html, body {
+	margin: auto;
+	background: #fefefe;
+	-webkit-font-smoothing: antialiased;
+}
 body {
-    font-family: var(--text-font) !important;
-    color: var(--text-color);
-    -webkit-font-feature-settings: "liga" on, "calt" on;
-    -webkit-font-smoothing: subpixel-antialiased;
-    text-rendering: optimizeLegibility;
-    letter-spacing: 0;
-    margin: 0;
-    overflow-x: hidden;
-}
-
-/*code block*/
-#write .md-fences {
-    font-size: 1rem;
-    padding: 0.5rem !important;
-    border-radius: 2px;
-    word-wrap: normal;
-    background-color: var(--code-block-bg-color);
-    color: var(--code-block-text-color);
-    border: none;
-}
-
-/*code snippet*/
-#write code, tt {
-    margin: 0 2px;
-    border-radius: 2px;
-    color: var(--drake-highlight);
-}
-
-/*raw block*/
-.md-rawblock-control:not(.md-rawblock-tooltip) {
-    border-radius: 2px 0 2px 2px;
-    padding: 0.2rem !important;
-}
-
-.md-rawblock:hover > .md-rawblock-container {
-    background: none;
-}
-
-.md-rawblock-input {
-    font-size: 1rem;
-}
-
-.md-rawblock:hover > .md-rawblock-tooltip {
-    border-radius: 2px 2px 0 0;
-    margin-bottom: 2px !important;
-}
-
-.md-rawblock-tooltip.md-rawblock-control {
-    border-radius: 2px 2px 0 0;
-    color: var(--code-block-text-color);
-}
-
-.md-rawblock-tooltip-name {
-    color: var(--code-block-text-color);
-    opacity: 1;
-}
-
-/*quote block*/
-blockquote:before {
-    display: block;
-    position: absolute;
-    content: '';
-    width: 4px;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background-color: var(--blockquote-border-color);
-    border-radius: 2px;
-}
-
-blockquote {
-    color: var(--text-color);
-    border-radius: 2px;
-    padding: 10px 16px;
-    background-color: var(--blockquote-bg-color);
-    position: relative;
-    border-left: none;
-}
-
-#write strong {
-    color: var(--strong-text-color);
-    font-weight: bold;
-}
-
-a {
-    color: var(--a-text-color);
-    padding: 0 2px;
-}
-
-img {
-    border-radius: 2px;
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
 }
 
 #write {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 30px 100px;
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
+	padding-top: 40px;
 }
 
-#write p {
-    line-height: 1.6rem;
-    word-spacing: .05rem;
-}
-
-#write > ul:first-child,
-#write > ol:first-child {
-    margin-top: 30px;
-}
-
-body > *:first-child {
-    margin-top: 0 !important;
-}
-
-body > *:last-child {
-    margin-bottom: 0 !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--title-font);
-    position: relative;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
-    color: var(--title-text-color);
-}
-
-h3.md-focus:before, h4.md-focus:before, h5.md-focus:before, h6.md-focus:before {
-    visibility: hidden;
-}
-
-h1 {
-    font-size: 1.6rem;
-    text-align: center;
-    margin-top: 0;
-}
-
-h2.md-end-block.md-heading {
-    font-size: 1.6rem;
-    display: inline-block;
-}
-
-h2.md-end-block.md-heading:after {
-    display: block;
-    content: '';
-    height: 2px;
-    margin-top: 4px;
-    background-color: var(--h2-underline-bg);
-    border-radius: 2px;
-}
-
-h3 {
-    font-size: 1.4rem;
-}
-
-h4 {
-    font-size: 1.2rem;
-}
-
-h5 {
-    font-size: 1rem;
-}
-
-h6 {
-    font-size: 1rem;
-}
-
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-    text-decoration: none;
-}
-
-h1 tt,
-h1 code {
-    font-size: inherit !important;
-}
-
-h2 tt,
-h2 code {
-    font-size: inherit !important;
-}
-
-h3 tt,
-h3 code {
-    font-size: inherit !important;
-}
-
-h4 tt,
-h4 code {
-    font-size: inherit !important;
-}
-
-h5 tt,
-h5 code {
-    font-size: inherit !important;
-}
-
-h6 tt,
-h6 code {
-    font-size: inherit !important;
-}
-
-p,
-blockquote,
-ul,
-ol,
-dl,
-table {
-    margin: 0.8em 0;
-}
-
-li > ol,
-li > ul {
-    margin: 0 0;
-}
-
-hr {
-    height: 2px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: var(--horizontal-divider-color);
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
-}
-
-body > h2:first-child {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-body > h1:first-child {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-body > h1:first-child + h2 {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-body > h3:first-child,
-body > h4:first-child,
-body > h5:first-child,
-body > h6:first-child {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-a:first-child h1,
-a:first-child h2,
-a:first-child h3,
-a:first-child h4,
-a:first-child h5,
-a:first-child h6 {
-    margin-top: 0;
-    padding-top: 0;
-}
-
-h1 p,
-h2 p,
-h3 p,
-h4 p,
-h5 p,
-h6 p {
-    margin-top: 0;
-}
-
-li p.first {
-    display: inline-block;
-}
-
-ul, ol {
-    padding-inline-start: 2em;
-}
-
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
-}
-
-table {
-    padding: 0;
-    word-break: initial;
-}
-
-table tr {
-    border-top: 1px solid var(--table-border-color);
-    margin: 0;
-    padding: 0;
-}
-
-table tr:nth-child(2n),
-thead {
-    background-color: var(--table-bg-color);
-}
-
-table tr th {
-    font-weight: bold;
-    border: 1px solid var(--table-border-color);
-    border-bottom: 0;
-    text-align: left;
-    margin: 0;
-    padding: 6px 13px;
-}
-
-table tr td {
-    border: 1px solid var(--table-border-color);
-    text-align: left;
-    margin: 0;
-    padding: 6px 13px;
-}
-
-table tr th:first-child,
-table tr td:first-child {
-    margin-top: 0;
-}
-
-table tr th:last-child,
-table tr td:last-child {
-    margin-bottom: 0;
-}
-
-#write em {
-    padding: 0 5px 0 2px;
-}
-
-#write table thead th {
-    background-color: var(--table-header-bg-color);
-}
-
-/* height light. */
-#write mark {
-    background-color: var(--height-light-bg-color);
-    color: inherit;
-    border-radius: 2px;
-    padding: 2px 2px;
-    margin: 0 2px;
-}
-
-#write del {
-    padding: 1px 2px;
-}
-
-.md-task-list-item > input {
-    margin-left: -1.3em;
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
 }
 
 @media print {
-    html {
-        font-size: 12px;
-    }
-
-    table,
-    pre {
-        page-break-inside: avoid;
-    }
-
-    pre {
-        word-wrap: break-word;
-    }
+	html {
+		font-size: 13px;
+	}
 }
 
-/*YAML*/
-#write pre.md-meta-block {
-    padding: 1rem;
-    font-size: 1rem;
-    line-height: 1.45;
-    background-color: var(--yaml-bg-color);
-    border: 0;
-    border-radius: 2px;
-    color: var(--yaml-text-color);
-    margin-top: 0 !important;
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
+h1 {
+	margin-top: 1.6em;
+	font-weight: normal;
 }
 
-.mathjax-block > .code-tooltip {
-    bottom: .375rem;
+h1 {
+	font-size:3em;
 }
 
-#write > h3.md-focus:before {
-    left: -1.5625rem;
-    top: .375rem;
+h2 {
+	margin-top:2em;
+	font-weight: normal;
 }
 
-#write > h4.md-focus:before {
-    left: -1.5625rem;
-    top: .285714286rem;
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
 }
 
-#write > h5.md-focus:before {
-    left: -1.5625rem;
-    top: .285714286rem;
+h1, 
+h2, 
+h3{
+	text-align: center;
 }
 
-#write > h6.md-focus:before {
-    left: -1.5625rem;
-    top: .285714286rem;
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
 }
 
-.md-image > .md-meta {
-    border-radius: 2px;
-    font-family: initial;
-    padding: 2px 0 0 4px;
-    color: inherit;
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
 }
 
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
+}
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
+ol {
+	padding-left: 1.2em;
+}
+blockquote {
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
+}
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.ty-table-edit {
+	background: #ededed;
+    padding-top: 4px;
+}
+table {
+	margin-bottom: 1.333333rem
+}
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
+}
+table th {
+	font-weight: bold
+}
+table thead th {
+	vertical-align: bottom
+}
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
+}
+table tbody+tbody {
+	border-top: 2px solid #ddd
+}
+
+.task-list{
+	padding:0;
+}
+
+.md-task-list-item {
+	padding-left: 1.6rem;
+}
+
+.md-task-list-item > input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	color: inherit;
+}
 .md-tag {
-    color: inherit;
+	color: inherit;
+	font: inherit;
+}
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+}
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
+}
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
+}
+#write>h5.md-focus:before {
+	top: 2px;
 }
 
 .md-toc {
-    margin-top: 20px;
-    padding-bottom: 20px;
+	margin-top: 40px;
 }
 
-.sidebar-tabs {
-    border-bottom: none;
+.md-toc-content {
+	padding-bottom: 20px;
 }
 
-.typora-quick-open-item {
-    font-size: 1rem !important;
-    height: 50px;
-    padding-left: 8px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
 }
 
-#typora-quick-open {
-    box-shadow: 0 0 8px #00000045;
-    padding: 0;
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
 }
 
-.ty-quick-open-category.ty-has-prev .ty-quick-open-category-title {
-    border-top: none;
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
 }
 
-#typora-quick-open-input {
-    margin: 8px;
-    box-shadow: none;
-    border-radius: 2px;
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
-#typora-quick-open-input input {
-    font-size: 1rem;
-    box-shadow: none;
-    padding-top: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    line-height: 32px;
-    max-height: 32px;
-    border: none;
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
 }
 
-.modal-dialog#typora-quick-open {
-    border-radius: 8px;
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
 }
 
-.ty-quick-open-category-title {
-    padding-left: 8px;
-    color: #BEBEBE;
-    font-size: 0.8rem;
-    margin-bottom: 4px;
+.typora-node .file-list-item-parent-loc, 
+.typora-node .file-list-item-time, 
+.typora-node .file-list-item-summary {
+	font-family: arial, sans-serif;
 }
 
-.typora-quick-open-item-path {
-    font-size: 0.8rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-top: 1px;
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: calc(1rem - 12px);
 }
 
-/*search input*/
-.form-control {
-    border: none;
-    border-radius: 2px;
-    box-shadow: none;
+.md-mathjax-midline {
+	background: #fafafa;
 }
 
-#md-searchpanel .btn {
-    border-radius: 2px;
+.md-fences .code-tooltip {
+	bottom: -2em !important;
 }
 
-#search-panel-replaceall-btn {
-    padding-right: 5px !important;
-    text-align: center !important;
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
 }
-
-#search-panel-replace-btn {
-    text-align: center !important;
-}
-
-#md-searchpanel input {
-    background: var(--input-bg-color);
-    border-radius: 2px;
-}
-
-.searchpanel-search-option-btn {
-    border-radius: 2px;
-    border: none;
-    background: transparent;
-    color: var(--text-color);
-}
-
-.searchpanel-search-option-btn.active {
-    background: transparent;
-    color: var(--text-color);
-    background: var(--text-color);
-    color: var(--bg-color);
-}
-
-.form-control:focus {
-    box-shadow: none;
-}
-
-#md-notification:before {
-    top: 10px;
-}
-
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
-}
-
-header,
-.context-menu,
-.megamenu-content,
-footer {
-    font-family: initial;
-}
-
-.file-node-content:hover .file-node-icon,
-.file-node-content:hover .file-node-open-state {
-    visibility: visible;
-}
-
-.mac-seamless-mode #typora-sidebar {
-    font-size: 1rem;
-}
-
-/*insert element*/
-
-.file-list-item-summary {
-    font-family: initial;
-}
-
-.outline-item {
-    font-size: 1rem;
-}
-
-.sidebar-tab {
-    font-size: 1rem;
-}
-
-/*footnotes mark*/
-#write .md-footnote {
-    background-color: inherit;
-    color: var(--drake-highlight);
-    font-size: 0.9rem;
-    border-radius: 0.9rem;
-    padding-left: 0;
-}
-
-#write .md-footnote:before {
-    content: "[";
-}
-
-#write .md-footnote:after {
-    content: "]";
-}
-
-/*footnotes content*/
-.md-hover-tip .code-tooltip-content {
-    border-radius: 2px;
-}
-
-/*footnotes title*/
-span.md-def-name {
-    padding-right: 3ch;
-    padding-left: 0;
-    position: relative;
-    font-weight: normal;
-}
-
-/*footnotes desc*/
-.footnotes {
-    font-size: 1rem;
-    font-weight: normal;
-    color: var(--text-color);
-    position: relative;
-}
-
-/*footnotes tooltip text*/
-.code-tooltip-content .md-plain {
-    font-size: 0.9rem;
-    font-family: inherit;
-}
-
-.code-tooltip-content code {
-    padding: 0 2px;
-    font-family: inherit;
-    color: var(--footnotes-highlight);
-    background-color: inherit;
-}
-
-.code-tooltip-content a {
-    color: var(--footnotes-highlight);
-}
-
-div.code-tooltip-content {
-    box-shadow: 0 0 8px #00000045;
-    background: var(--footnotes-bg-color);
-}
-
-.footnotes {
-    opacity: 1;
-}
-
-.md-def-name:after {
-    content: ". ^";
-    color: var(--text-color);
-}
-
-.md-def-footnote .md-def-name:before {
-    content: "";
-    color: var(--text-color);
-    position: absolute;
-}
-
-.md-def-name:before {
-    content: "";
-    color: var(--text-color);
-    position: absolute;
-}
-
-.CodeMirror-scroll::-webkit-scrollbar {
-    display: none;
-}
-
-.file-list-item-summary {
-    font-size: 1em;
-}
-
-.pin-outline #outline-content .outline-active strong, .pin-outline .outline-active {
-    font-weight: 500;
-    color: var(--outline-active-color);
-}
-
-.file-list-item.active {
-    border-left: 4px solid var(--drake-accent);
-}
-
-#md-searchpanel .btn:not(.close-btn):hover {
-    box-shadow: none;
-    background: var(--btn-hover-bg-color);
-}
-
-/*checkbox*/
-#write input[type=checkbox] {
-    opacity: 0;
-    height: 1.6rem;
-    width: 1.6rem;
-    margin-left: -2em;
-    margin-top: 0;
-    top: 0;
-}
-
-#write .ul-list li.md-task-list-item.task-list-done p {
-    text-decoration: line-through;
-}
-
-#write .ul-list li.md-task-list-item.task-list-done::before {
-    content: "";
-    background: var(--checkbox-checked) 0 0 no-repeat;
-    background-size: 100%;
-    display: inline-block;
-    position: absolute;
-    height: 1.6rem;
-    width: 1.6rem;
-    margin-left: -2em;
-}
-
-#write .ul-list li.md-task-list-item.task-list-not-done::before {
-    content: "";
-    background: var(--checkbox-unchecked) 0 0 no-repeat;
-    background-size: 100%;
-    display: inline-block;
-    position: absolute;
-    height: 1.6rem;
-    width: 1.6rem;
-    margin-left: -2em;
-}
-
-/*insert table*/
-.btn {
-    border-radius: 2px;
-}
-
-.modal-content {
-    border-radius: 8px;
-}
-
-.btn-primary:hover, .btn-primary:active {
-    background-color: var(--btn-hover-bg-color);
-    color: var(--drake-highlight);
-}
-
-.btn-primary {
-    background-color: transparent;
-    color: var(--drake-highlight);
-}
-
-.btn-default {
-    background-color: transparent;
-}
-
-.btn:active {
-    box-shadow: none;
-    border-color: transparent;
-}
-
-.modal-footer {
-    border-top: none;
-}
-
-#table-insert-col, #table-insert-row {
-    background: var(--input-bg-color);
-    border-radius: 2px;
-}
-
-/**
-    code render
-    Name: IntelliJ IDEA light theme
-    From IntelliJ IDEA by JetBrains
- */
-.cm-s-inner span.cm-number {
-    color: #4A86E8;
-}
-
-.cm-s-inner span.cm-atom {
-    color: #9E880D;
-}
-
-.cm-s-inner span.cm-def {
-    color: #00f;
-}
-
-.cm-s-inner span.cm-variable {
-    color: black;
-}
-
-.cm-s-inner span.cm-variable-2 {
-    color: #00627A;
-}
-
-.cm-s-inner span.cm-variable-3, .cm-s-inner span.cm-type {
-    color: #00627A;
-}
-
-.cm-s-inner span.cm-property {
-    color: black;
-}
-
-.cm-s-inner span.cm-keyword {
-    color: #708;
-}
-
-.cm-s-inner span.cm-operator {
-    color: black;
-}
-
-.cm-s-inner span.cm-comment {
-    color: #787878;
-}
-
-.cm-s-inner span.cm-string {
-    color: #008000;
-}
-
-.cm-s-inner span.cm-string-2 {
-    color: #008000;
-}
-
-.cm-s-inner span.cm-qualifier {
-    color: black;
-}
-
-.cm-s-inner span.cm-error {
-    color: red;
-}
-
-.cm-s-inner span.cm-attribute {
-    color: black;
-}
-
-.cm-s-inner span.cm-tag {
-    color: black;
-}
-
-.cm-s-inner span.cm-link {
-    color: #4A86E8;
-}
-
-.cm-s-inner span.cm-builtin {
-    color: black;
-}
-
-.cm-s-inner span.cm-bracket {
-    color: black;
-}
-
-.cm-s-inner .CodeMirror-gutters {
-    border-right: 1px solid rgba(120, 120, 120, 0.3);
-    border-radius: 2px;
-    width: 2.2rem !important;
-}
-
-.cm-s-inner .CodeMirror-linenumber {
-    color: #787878;
-    text-align: center;
-    width: 2.2rem !important;
-    padding: 0;
-}
-
-*, :after, :before {
-    box-sizing: unset;
-}
-
 
  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
 </style><title>Spring2023</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='8086汇编语言程序设计'><span>8086汇编语言程序设计</span></h1><h2 id='课程信息'><span>课程信息</span></h2><ul><li><span>周学时：4 + 1.5</span></li><li><span>总学时：48课时（32+16）</span></li><li><span>上课时间&amp;地点：1-8周，周二7-8节A107，周五7-8节A201</span></li><li><span>任课教师：刘松冉（Email: </span><a href='mailto:liusongran@cse.neu.edu.cn' target='_blank' class='url'>liusongran@cse.neu.edu.cn</a><span>）</span></li><li><span>助课研究生：王子龙（Email: </span><a href='mailto:2101815@stu.neu.edu.cn' target='_blank' class='url'>2101815@stu.neu.edu.cn</a><span>）</span></li><li><span>授课对象：本科生（计算机2101、计算机2102）</span></li></ul><h2 id='课程通知'><span>课程通知</span></h2><p><span>作业提交方式：以QQ群（619592416）通知为准。如无特别声明，作业的截止日期为下一周上课之前。</span></p><h2 id='课程简介'><span>课程简介</span></h2><p><span>《汇编语言程序设计》计算机科学与技术等专业学生的专业基础课。它不仅是计算机组成原理、接口技术、操作系统等其它课程的必要先行课，而且对于训练学生掌握程序设计技术、熟练上机操作和程序调试技术有重要作用。</span></p><p><span>本课程的主要任务是结合一种机型讲述计算机的结构；汇编语言的词法、语法及伪指令；汇编语言中数据的表示方法；汇编语言的指令系统；汇编语言程序的基本控制结构及其程序设计技巧；子程序的设计方法；输入输出及中断程序的设计方法和技巧。使得学生通过本门课程的学习，掌握汇编语言程序的基本概念、基本方法和基本技巧，培养学生阅读、分析、设计和调试汇编语言的能力。</span></p><h2 id='教学内容'><span>教学内容</span></h2><ol start='' ><li><span>第①讲(2022-03-01)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter1.pdf'><span>第1章-概述</span></a><span>。</span></li><li><span>第②讲(2022-03-03)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter2.pdf'><span>第2章-计算机运算基础</span></a><span>，</span><a href='./Slides2023/chapter3-a.pdf'><span>第3章-微型计算机的结构-上</span></a><span>。</span></li><li><span>第③讲(2022-03-08)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter3-b.pdf'><span>第3章-微型计算机的结构-中</span></a><span>。</span></li><li><span>第④讲(2022-03-10)</span><span>|</span><span>|</span><span>讲义：第3章-微型计算机的结构-下。</span></li><li><span>第⑤讲(2022-03-15)</span><span>|</span><span>|</span><span>讲义：第3章-微型计算机的结构-寻址方式（补），第4章-汇编语言。</span></li><li><span>第⑥讲(2022-03-17)</span><span>|</span><span>|</span><span>讲义：第5章-顺序结构程序。</span></li><li><span>第⑦讲(2022-03-22)</span><span>|</span><span>|</span><span>讲义：第6章-分支结构程序。</span></li><li><span>第⑧讲(2022-03-24)</span><span>|</span><span>|</span><span>讲义：第7章-循环结构程序。</span></li><li><span>第⑨讲(2022-03-29)</span><span>|</span><span>|</span><span>讲义：第7章-循环结构程序。</span></li><li><span>第⑩讲(2022-03-31)</span><span>|</span><span>|</span><span>讲义：第8章-子程序设计。</span></li><li><span>第⑪讲(2022-04-05)</span><span>|</span><span>|</span><span>讲义：第8章-子程序设计，第9章-条件汇编与宏指令。</span></li><li><span>第⑫讲(2022-04-07)</span><span>|</span><span>|</span><span>讲义：第10章-算数运算与代码转换。</span></li><li><span>第⑬讲(2022-04-12)</span><span>|</span><span>|</span><span>讲义：第11章-列表与字符串操作。</span></li><li><span>第⑭讲(2022-04-14)</span><span>|</span><span>|</span><span>讲义：第11章-列表与字符串操作。</span></li><li><span>第⑮讲(2022-04-19)</span><span>|</span><span>|</span><span>讲义：第12章-输入输出与中断-上。</span></li><li><span>第⑯讲(2022-04-21)</span><span>|</span><span>|</span><span>讲义：第12章-输入输出与中断-下。</span></li></ol><h2 id='参考书目'><span>参考书目</span></h2><ol start='' ><li><span>《</span><a href='https://book.douban.com/subject/1020163/'><span>汇编语言程序设计</span></a><span> - 齐志儒，高福祥主编》，东北大学出版社。</span></li><li><span>《</span><a href='https://book.douban.com/subject/35038473/'><span>汇编语言</span></a><span> - 王爽》，清华大学出版社。</span></li><li><span>《</span><a href='https://book.douban.com/subject/26769528/'><span>汇编语言：基于x86处理器</span></a><span> - Kip Irvine[美]》，机械工业出版社。</span></li></ol><h2 id='工具'><span>工具</span></h2><h3 id='8086-assembly-program-design'><span>8086 Assembly Program Design</span></h3><ol start='' ><li><a href='https://emu8086-microprocessor-emulator.en.softonic.com/'><span>Emu8086</span></a><span> for Windows.</span></li><li><a href='https://gitee.com/dosasm/masm-tasm/'><span>MASM/TASM plugin</span></a><span> for Vscode.</span></li><li><a href='https://www.dosbox.com/'><span>DOSBOX: an x86 emulator with DOS</span></a><span>. </span></li><li><span>MASM tools (e.g., MASM.exe, LINK.exe, DEBUG.exe) can be found </span><a href='https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/MASM'><span>here</span></a><span>.</span></li></ol></div></div>
+<div id='write'  class=''><h1 id='8086汇编语言程序设计'><span>8086汇编语言程序设计</span></h1><h2 id='课程信息'><span>课程信息</span></h2><ul><li><span>周学时：4 + 1.5</span></li><li><span>总学时：48课时（32+16）</span></li><li><span>上课时间&amp;地点：1-8周，周二7-8节A107，周五7-8节A201</span></li><li><span>任课教师：刘松冉（Email: </span><a href='mailto:liusongran@cse.neu.edu.cn' target='_blank' class='url'>liusongran@cse.neu.edu.cn</a><span>）</span></li><li><span>助课研究生：王子龙（Email: </span><a href='mailto:2101815@stu.neu.edu.cn' target='_blank' class='url'>2101815@stu.neu.edu.cn</a><span>）</span></li><li><span>授课对象：本科生（计算机2101、计算机2102）</span></li></ul><h2 id='课程通知'><span>课程通知</span></h2><p><span>作业提交方式：以QQ群（619592416）通知为准。如无特别声明，作业的截止日期为下一周上课之前。</span></p><h2 id='课程简介'><span>课程简介</span></h2><p><span>《汇编语言程序设计》计算机科学与技术等专业学生的专业基础课。它不仅是计算机组成原理、接口技术、操作系统等其它课程的必要先行课，而且对于训练学生掌握程序设计技术、熟练上机操作和程序调试技术有重要作用。</span></p><p><span>本课程的主要任务是结合一种机型讲述计算机的结构；汇编语言的词法、语法及伪指令；汇编语言中数据的表示方法；汇编语言的指令系统；汇编语言程序的基本控制结构及其程序设计技巧；子程序的设计方法；输入输出及中断程序的设计方法和技巧。使得学生通过本门课程的学习，掌握汇编语言程序的基本概念、基本方法和基本技巧，培养学生阅读、分析、设计和调试汇编语言的能力。</span></p><h2 id='教学内容'><span>教学内容</span></h2><ol start='' ><li><span>第①讲(2022-03-01)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter1.pdf'><span>第1章-概述</span></a><span>。</span></li><li><span>第②讲(2022-03-03)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter2.pdf'><span>第2章-计算机运算基础</span></a><span>，</span><a href='./Slides2023/chapter3-a.pdf'><span>第3章-微型计算机的结构-上</span></a><span>。</span></li><li><span>第③讲(2022-03-08)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter3-b.pdf'><span>第3章-微型计算机的结构-中</span></a><span>。</span></li><li><span>第④讲(2022-03-10)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter3-b.pdf'><span>第3章-微型计算机的结构-下</span></a><span>。</span></li><li><span>第⑤讲(2022-03-15)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter4.pdf'><span>第4章-汇编语言</span></a><span>。</span></li><li><span>第⑥讲(2022-03-17)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter5.pdf'><span>第5章-顺序结构程序</span></a><span>。</span></li><li><span>第⑦讲(2022-03-22)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter6.pdf'><span>第6章-分支结构程序</span></a><span>。</span></li><li><span>第⑧讲(2022-03-24)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter7.pdf'><span>第7章-循环结构程序</span></a><span>。</span></li><li><span>第⑨讲(2022-03-29)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter7.pdf'><span>第7章-循环结构程序</span></a><span>。</span></li><li><span>第⑩讲(2022-03-31)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter8.pdf'><span>第8章-子程序设计</span></a><span>。</span></li><li><span>第⑪讲(2022-04-05)</span><span>|</span><span>|</span><span>讲义：</span><a href='./Slides2023/chapter8.pdf'><span>第8章-子程序设计</span></a><span>，第9章-条件汇编与宏指令。</span></li><li><span>第⑫讲(2022-04-07)</span><span>|</span><span>|</span><span>讲义：第10章-算数运算与代码转换。</span></li><li><span>第⑬讲(2022-04-12)</span><span>|</span><span>|</span><span>讲义：第11章-列表与字符串操作。</span></li><li><span>第⑭讲(2022-04-14)</span><span>|</span><span>|</span><span>讲义：第11章-列表与字符串操作。</span></li><li><span>第⑮讲(2022-04-19)</span><span>|</span><span>|</span><span>讲义：第12章-输入输出与中断-上。</span></li><li><span>第⑯讲(2022-04-21)</span><span>|</span><span>|</span><span>讲义：第12章-输入输出与中断-下。</span></li></ol><h2 id='参考书目'><span>参考书目</span></h2><ol start='' ><li><span>《</span><a href='https://book.douban.com/subject/1020163/'><span>汇编语言程序设计</span></a><span> - 齐志儒，高福祥主编》，东北大学出版社。</span></li><li><span>《</span><a href='https://book.douban.com/subject/35038473/'><span>汇编语言</span></a><span> - 王爽》，清华大学出版社。</span></li><li><span>《</span><a href='https://book.douban.com/subject/26769528/'><span>汇编语言：基于x86处理器</span></a><span> - Kip Irvine[美]》，机械工业出版社。</span></li></ol><h2 id='工具'><span>工具</span></h2><h3 id='8086-assembly-program-design'><span>8086 Assembly Program Design</span></h3><ol start='' ><li><a href='https://emu8086-microprocessor-emulator.en.softonic.com/'><span>Emu8086</span></a><span> for Windows.</span></li><li><a href='https://gitee.com/dosasm/masm-tasm/'><span>MASM/TASM plugin</span></a><span> for Vscode.</span></li><li><a href='https://www.dosbox.com/'><span>DOSBOX: an x86 emulator with DOS</span></a><span>. </span></li><li><span>MASM tools (e.g., MASM.exe, LINK.exe, DEBUG.exe) can be found </span><a href='https://github.com/liusongran/liusongran.github.io/tree/main/Teaching/Assembly/MASM'><span>here</span></a><span>.</span></li></ol></div></div>
 </body>
 </html>
