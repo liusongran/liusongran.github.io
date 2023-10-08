@@ -19,6 +19,8 @@ SQRT:	MOV		AX, DSEG		;设置数据段地址
 		XOR		CX, CX			;计数器清零
 		XOR		AX, AX			;设i的初值为0
 		MOV		DX, DATA		;被开方数送DX
+		MOV 	BX, DX
+		CALL 	[BX]
 AG:		AND		DX, DX			;被开方数为零吗
 		JZ		LRT				;被开方数为零,转
 		MOV		BX, AX			;i值送BX

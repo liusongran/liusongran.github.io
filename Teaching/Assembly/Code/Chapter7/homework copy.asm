@@ -1,0 +1,40 @@
+﻿;;
+DSEG	SEGMENT
+DATA	   DW	1524, 2748, 13, 56, 47, 634
+CNT     DW  6
+AE      DW  6 DUP(0)
+DSEG	ENDS
+
+CSEG:SEGMENT
+     DS:DESG CS:CSEG
+START:
+     MOV AX,DSEG
+     MOV DS,AX
+     MOV SI,OFFSET DATA
+     MOV CX,CNT
+     PUSH CX
+     XOR AX,AX
+     XOR DX,DX
+AGAIN: 
+     ADD AX,[SI]
+     ADC DX,0
+     ADD SI,2
+     DEC CL
+     JNZ AGAIN
+     POP CX
+     DIV CX
+     XOR BP,BP
+PER:
+     SUB SI,2
+     CMP AX,[SI]
+     JNB NEXT
+     MOV DX,[SI]
+     MOV DS:AE[BP],DX
+     ADD BP,2
+NEXT:
+     DEC CX
+     JNZ PRE
+     MOV AH,4CH
+     INT 21H
+CSEG ENDS
+     ENDS START
