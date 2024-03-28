@@ -4,6 +4,8 @@
 Please check my [GoogleScholar](https://scholar.google.com/citations?user=djVfjSQAAAAJ&hl) profile for a full list of publications.
 
 #### 🚘 Autonomous Driving and Real-Time Robotic Operating System (ROS)
+- <span style="text-decoration:underline">RTeX: an Efficient and Timing-Predictable Multi-threaded Executor for ROS 2.</span> **Songrna Liu**, Xu Jiang, Nan Guan, Zilong Wang, Minghe Yu and Yi Wang.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 2024</span>
+
 - <span style="text-decoration:underline">Optimizing End-to-End Latency of Sporadic Cause-Effect Chains Using Priority Inheritance.</span> Yue Tang, Xu Jiang, Nan Guan, **Songran Liu**, Xiantong Luo and Yi Wang.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> IEEE Real-Time Systems Symposium (RTSS), 2023</span>
 
 - <span style="text-decoration:underline">Modeling and Analysis of Inter-Process Communication Delay in ROS 2.</span> Xiantong Luo, Xu Jiang, Nan Guan, Haochun Liang, Songran Liu and Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> IEEE Real-Time Systems Symposium (RTSS), 2023</span>
