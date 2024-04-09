@@ -8,7 +8,7 @@ Please check my [GoogleScholar](https://scholar.google.com/citations?user=djVfjS
 
 - <span style="text-decoration:underline">Optimizing End-to-End Latency of Sporadic Cause-Effect Chains Using Priority Inheritance.</span> Yue Tang, Xu Jiang, Nan Guan, **Songran Liu**, Xiantong Luo and Yi Wang.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> IEEE Real-Time Systems Symposium (RTSS), 2023</span>
 
-- <span style="text-decoration:underline">Modeling and Analysis of Inter-Process Communication Delay in ROS 2.</span> Xiantong Luo, Xu Jiang, Nan Guan, Haochun Liang, Songran Liu and Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> IEEE Real-Time Systems Symposium (RTSS), 2023</span>
+- <span style="text-decoration:underline">Modeling and Analysis of Inter-Process Communication Delay in ROS 2.</span> Xiantong Luo, Xu Jiang, Nan Guan, Haochun Liang, **Songran Liu** and Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> IEEE Real-Time Systems Symposium (RTSS), 2023</span>
 
 
 #### 🔋 Batteryless Energy-harvesting System

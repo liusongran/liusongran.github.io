@@ -1,6 +1,6 @@
 ;*****EXAM6.1*****
 SSEG    SEGMENT STACK
-STK     DB      50DUP(0)
+STK     DB      50 DUP(0)
 SSEG    ENDS
 
 DSEG    SEGMENT
