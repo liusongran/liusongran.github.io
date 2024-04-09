@@ -1,10 +1,10 @@
 ﻿# 🧑‍🎨 Students
 ## Masters:
-- Zilong Wang (2020-)
-- Bohan Sun (2021-)
-- Jingbo Chen (2022-)
-- Bochao Cao (2022-)
-- Jiafu Xu (2023-)
+- Zilong Wang (2021-)
+- Bohan Sun (2022-)
+- Jingbo Chen (2023-)
+- Bochao Cao (2023-)
+- Jiafu Xu (2024-)
 
 ## Undergraduate students:
 
