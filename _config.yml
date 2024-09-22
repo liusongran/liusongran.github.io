@@ -21,11 +21,11 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Songran Liu"
+  name             : "Songran Liu(刘松冉)"
   avatar           : "images/android-chrome-512x512.png"
   bio              : "Northeastern University, China"
   location         : "Shenyang, Liaoning"
-  employer         : "School of computer Science & Engineering"
+  employer         : #"School of computer Science & Engineering"
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=djVfjSQAAAAJ&hl"
   email            : "liusongran@cse.neu.edu.cn"
