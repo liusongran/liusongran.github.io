@@ -1,12 +1,16 @@
 ;*****EXAM6.1*****
-SSEG    SEGMENT STACK
-STK     DB      50 DUP(0)
-SSEG    ENDS
 
 DSEG    SEGMENT
 ARGX	DB      -5
 RLT     DB      ?
+TEL     DW      RLT
+TEL2    DW      OFFSET ARGX
 DSEG    ENDS
+
+SSEG    SEGMENT STACK
+STK     DB      50 DUP(0)
+SSEG    ENDS
+
 
 CSEG    SEGMENT
         ASSUME  CS:CSEG, DS:DSEG
@@ -15,6 +19,23 @@ BEGIN:	MOV     AX, DSEG
         MOV     DS, AX
         MOV     AX, SSEG
         MOV	SS, AX
+        MOV     CX, 1
+        REP     MOVSB
+        MOV     BX, 32
+        MOV     CX, OFFSET ARGX
+        MOV     DH, 0
+        MOV     DL, ARGX
+        MOV     BX, TEL
+        MOV     AX, TEL2
+        MOV     CX, 0
+        MOV     AX, 1
+        MOV     BX, 2
+        MOV     DX, 3
+        MOV     CX, 4
+L20:    INC     AX
+        ADD     BX, AX
+        SHR     DX, 1
+        LOOPE   L20
         MOV     SP, SIZE STK
         MOV     AL, ARGX        ;取X
         AND	AL, AL	        ;置标志位

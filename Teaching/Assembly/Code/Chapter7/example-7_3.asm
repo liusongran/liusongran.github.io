@@ -2,6 +2,7 @@
 DSEG	SEGMENT
 DATA	DW	13924
 ROOT	DW	0
+TESS 	DB  10, 12
 DSEG	ENDS
 
 SSEG	SEGMENT PARA STACK 'SSEG'
@@ -16,6 +17,7 @@ SQRT:	MOV		AX, DSEG		;设置数据段地址
 		MOV		AX, SSEG		;设置堆栈段地址
 		MOV		SS, AX
 		MOV		SP, SIZE STACK
+		MOV     AL, HIGH 1234
 		XOR		CX, CX			;计数器清零
 		XOR		AX, AX			;设i的初值为0
 		MOV		DX, DATA		;被开方数送DX

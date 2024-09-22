@@ -14,6 +14,8 @@ START:  MOV     AX, DSEG   	    ;段寄存器初值
         MOV     DS, AX
         MOV     AX, SSEG
         MOV     SS, AX
+        MOV     CX, 0
+        REP     MOVSB
         MOV     SP, SIZE STK    ;设置堆栈指
         MOV	    AX, OFFSET DATA1    
         LDS     BX, AX

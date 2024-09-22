@@ -4,6 +4,6 @@
 - [LATICS]()
 
 #### Robotic Operating System
-- [RTeX]()
+- [RTeX](https://github.com/ESLab2012/RTeX)
 - [neuROS]()
 - [PoDS]()
