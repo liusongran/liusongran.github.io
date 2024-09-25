@@ -23,9 +23,9 @@ Please check my [GoogleScholar](https://scholar.google.com/citations?user=djVfjS
 - <span style="text-decoration:underline">LATICS: A low-overhead adaptive task-based intermittent computing system.</span> **Songran Liu**, Mingsong Lv, Wei Zhang, Nan Guan.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2021, CCF-A</span>
 
 #### 📱 Trustworthy and Real-time Edge AI
-- <span style="text-decoration:underline">MiniTEE—A Lightweight TrustZone-Assisted TEE for Real-Time Systems.</span> Weiguang Pang, Xu Jiang, **Songran Liu**, Lei Qiao, kexue fu, longxiang Gao and Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> DAC, 2024, CCF-A</span>
+- <span style="text-decoration:underline">Control Flow Divergence Optimization by Exploiting Tensor Cores.</span> Weiguang Pang, Xu Jiang, **Songran Liu**, Lei Qiao, kexue fu, longxiang Gao and Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> DAC, 2024, CCF-A</span>
 
-- <span style="text-decoration:underline">Control Flow Divergence Optimization by Exploiting Tensor Cores.</span> **Songran Liu**, Nan Guan, Zhishan Guo, Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> Electronics, 2020</span>
+- <span style="text-decoration:underline">MiniTEE—A Lightweight TrustZone-Assisted TEE for Real-Time Systems.</span> **Songran Liu**, Nan Guan, Zhishan Guo, Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> Electronics, 2020</span>
 
 - <span style="text-decoration:underline">Leaking your engine speed by spectrum analysis of real-Time scheduling sequences.</span> **Songran Liu**, Nan Guan, Dong Ji, Weichen Liu, Xue Liu, Wang Yi.<span style="font-style:italic; background-color:rgb(250, 244, 250); color:rgb(157, 34, 157)"> Journal of Systems Architecture, 2019, CCF-B</span>
 
