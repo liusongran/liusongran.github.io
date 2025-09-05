@@ -14,7 +14,11 @@ START:  MOV AX, DSEG
         MOV DS,  AX
         MOV AX, SSEG
         MOV SS, AX
+        MOV BX, 0106H
+        LEA CX, [BX]
         MOV AL, 9BH
+        MOV BL, 0AH
+        MOV CL, 03H
         NEG AL
         LEA DX, RU
         MOV AH, 09H

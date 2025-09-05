@@ -41,6 +41,8 @@ MAIN:   MOV     AX, DATA
         MOV     AX, SSEG
         MOV     SS, AX
         MOV     SP, SIZE STKTOP
+        MOV     AX, CS
+        MOV     CS, AX
         LEA     DX, MSEG1
         CALL    PRINTF
         LEA     DX, MSEG2

@@ -1,4 +1,4 @@
-# 📝 Open-sourced Projects
+# 📝 Projects
 #### Intermittent Computing Systems
 - [RIPPLE]()
 - [LATICS]()

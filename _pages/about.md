@@ -17,6 +17,4 @@ redirect_from:
 
 {% include_relative includes/reviewer.md %}
 
-{% include_relative includes/projects.md %}
-
 {% include_relative includes/students.md %}
