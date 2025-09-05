@@ -1,9 +1,9 @@
 ﻿# 🧑‍🎨 Students
 ## Ph.D.:
-- Zilong Wang (2024-): || [Email](wangzl10@mails.neu.edu.cn)
+- Zilong Wang (2024-): [Email](wangzl10@mails.neu.edu.cn)
 
 ## Masters:
-- Zilong Wang (2021-2024):-> NEU Ph.D. || [Email](wangzl10@mails.neu.edu.cn)
+- Zilong Wang (2021-2024):-> NEU Ph.D. [Email](wangzl10@mails.neu.edu.cn)
 - Bohan Sun (2022-2025):-> Mianyang City Tobacco Monopoly Administration (China)
 - Jingbo Chen (2023-):
 - Bochao Cao (2023-):
